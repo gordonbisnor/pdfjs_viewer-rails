@@ -7141,9 +7141,14 @@ var PDFViewerApplication = {
 };
 window.PDFView = PDFViewerApplication; // obsolete name, using it as an alias
 
+var HOSTED_VIEWER_ORIGINS;
 
-var HOSTED_VIEWER_ORIGINS = ['null',
-  'https://canadianscholars.ca', 'https://coursepack.canadianscholars.ca', 'https://www.canadianscholars.ca','https://www.womenspress.canadianscholars.ca','https://cspi.s3.amazonaws.com'];
+if (window.HOSTED_VIEWER_ORIGINS_OPTIONS) {
+  HOSTED_VIEWER_ORIGINS = window.HOSTED_VIEWER_ORIGINS_OPTIONS;
+} else {
+  HOSTED_VIEWER_ORIGINS = ['null'];
+}
+
 function validateFileURL(file) {
   try {
     var viewerOrigin = new URL(window.location.href).origin || 'null';
