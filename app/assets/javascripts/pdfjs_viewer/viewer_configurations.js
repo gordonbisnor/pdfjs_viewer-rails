@@ -7,3 +7,4 @@ try {
 }
 
 PDFJS.verbosity = PDFJS.VERBOSITY_LEVELS[verbosity];
+PDFJS.externalLinkTarget = PDFJS.LinkTarget.BLANK;
